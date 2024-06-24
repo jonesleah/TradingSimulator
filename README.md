@@ -16,6 +16,6 @@ python main.py <strategy> <stock> <start_date> <end_date> [--short <short_window
 ```bash
 python main.py SMA AAPL 2020-01-01 2024-01-01 --short 20 --long 200
 ```
-Strategy Return: 1.03
+Strategy Return: 1.03, 
 Strategy Risk (Std Dev): 0.28
 <img width="809" alt="SMA_demo" src="https://github.com/jonesleah/tradingSimulator/assets/148723943/890f5515-c82b-4b73-8a6b-cb3a15fe9ef6">

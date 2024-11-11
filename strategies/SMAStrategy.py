@@ -9,7 +9,7 @@ class SMAStrategy(baseStrategy):
         super().__init__(stock, start, end)
         self.SMA_short = SMA_short
         self.SMA_long = SMA_long
-        self.longBias = longBias # long bias sets position to 0 (hold) when SMA_short > SMA_long
+        self.longBias = longBias # long bias sets position to 0 (hold) when SMA_short < SMA_long
     
     def strategy(self):
         self.data["SMA_short"] = self.data.Close.rolling(self.SMA_short).mean()

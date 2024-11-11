@@ -4,11 +4,10 @@ import matplotlib.pyplot as plt
 
 # STRATEGY: more weight given to recent values than in SMA => more responsive to price changes
 class EMAStrategy(baseStrategy):
-    def __init__(self, stock, start, end, EMA_short, EMA_long, weight, longBias):
+    def __init__(self, stock, start, end, EMA_short, EMA_long, longBias):
         super().__init__(stock, start, end)
         self.EMA_short = EMA_short
         self.EMA_long = EMA_long
-        self.weight = weight
         self.longBias = longBias
     
     def strategy(self):

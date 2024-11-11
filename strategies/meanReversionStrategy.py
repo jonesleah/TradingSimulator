@@ -3,8 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # STRATEGY: Since an asset will eventually move toward its average,
-#           - go long when the RSI is less than 30 and its price is less than 2 std devs away from its movingAvg
-#           - go short when the RSI is greater than 70 and its price is more than 2 std devs from the movingAvg
+#  (a) go long when the RSI is less than 30 and its price is less than 2 std devs away from its movingAvg
+#  (b) go short when the RSI is greater than 70 and its price is more than 2 std devs from the movingAvg
 
 class meanReversionStrategy(baseStrategy):
     def __init__(self, stock, start, end, range):

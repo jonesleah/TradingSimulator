@@ -22,8 +22,10 @@ class baseStrategy:
         self.strategy()
         self.data["strategy"] = self.data["returns"] * self.data["position"].shift(1)
         self.data.dropna(inplace=True)
-        returns = np.exp(self.data["strategy"].sum())
-        stdDev = self.data["strategy"].std() * np.sqrt(252)
+        stratReturn = np.exp(self.data["strategy"].sum())
+        buyHoldReturn = np.exp(self.data["returns"].sum())
+        stratStdDev = self.data["strategy"].std() * np.sqrt(252)
+        buyHoldStdDev = self.data["returns"].std() * np.sqrt(252)
         self.data["BuyHoldReturns"] = self.data["returns"].cumsum().apply(np.exp)
         self.data["StrategyReturns"] = self.data["strategy"].cumsum().apply(np.exp)
-        return returns, stdDev, self.data
+        return stratReturn, buyHoldReturn, stratStdDev, buyHoldStdDev, self.data
